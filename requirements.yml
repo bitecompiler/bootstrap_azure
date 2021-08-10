@@ -1,0 +1,8 @@
+---
+roles:
+  - name: geerlingguy.pip
+  - name: geerlingguy.docker
+
+collections:
+  - name: https://github.com/bitecompiler/ansible-collection-dockerswarmrocks.git
+    type: git

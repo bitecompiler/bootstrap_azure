@@ -1,0 +1,41 @@
+swarmfile_dir: /swarm
+
+le_dns_auth:
+  provider: azure
+  credentials:
+    - { name: azure_client_id, value: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", as_file: true}
+    - { name: azure_client_secret, value: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", as_file: true}
+    - { name: azure_subscription_id, value: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", as_file: true}
+    - { name: azure_tenant_id, value: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", as_file: true}
+    - { name: azure_resource_group, value: "resources", as_file: true}
+
+swarmpit_domain: swarmpit.swarm01.example.com
+swarmprom_domain: swarm01.example.com
+swarmprom_admin_user: admin
+swarmprom_admin_password: changethis
+swarmprom_admin_password_hash: "$$apr1$$IlkpcFzw$$237GSEEQLv.YBSXfAXIha1"
+traefik_email: certs@example.com
+traefik_domain: traefik.swarm01.example.com
+traefik_username: admin
+traefik_password: changethis
+portainer_domain: portainer.swarm01.example.com
+
+gitlab_domain: git.example.com
+gitlab_root_password: changethis
+registry_domain: registry.git.example.com
+
+gitlab_omniauth_azuread_enabled: true
+gitlab_az_app_client_id: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+gitlab_az_app_client_secret: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+gitlab_az_app_tenant_id: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+
+gitlab_omniauth_keycloak_enabled: false
+gitlab_keycloak_redirect_uri: https://gitlab.example.com/users/auth/openid_connect/callback
+gitlab_keycloak_realm: https://keycloak.example.com/auth/realms/myrealm
+gitlab_keycloak_client_id: CLIENT_ID
+gitlab_keycloak_client_secret: CLIENT_SECRET
+
+gitlab_auth_ldap_enabled: false
+gitlab_ldap_server: ldap.example.com
+gitlab_ldap_bind_dn: LDAP_BIND_DN
+gitlab_ldap_bind_pw: LDAP_BIND_PW

@@ -1,0 +1,2 @@
+[managers]
+swarm01.example.com ansible_user=admin

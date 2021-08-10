@@ -1,0 +1,38 @@
+---
+- hosts: managers
+  become: true
+  vars:
+    pip_install_packages:
+      - name: docker
+      - name: docker-compose
+      - name: passlib
+      - name: jsondiff
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+  roles:
+    - role: geerlingguy.pip
+      tags:
+        - pip
+    - role: geerlingguy.docker
+      tags:
+        - docker
+    - role: bitecompiler.dockerswarmrocks.swarm
+      tags:
+        - swarm
+    - role: bitecompiler.dockerswarmrocks.traefik
+      tags:
+        - traefik
+    - role: bitecompiler.dockerswarmrocks.swarmpit
+      tags:
+        - swarmpit
+    - role: bitecompiler.dockerswarmrocks.swarmprom
+      tags:
+        - swarmprom
+    - role: bitecompiler.dockerswarmrocks.portainer
+      tags:
+        - portainer
+    - role: bitecompiler.dockerswarmrocks.gitlab
+      tags:
+        - gitlab
